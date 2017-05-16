@@ -1,0 +1,35 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="sara.vtwo.AppConfig"
+    version="1.1.0">
+
+    <name>APP Config</name>
+
+    <description>This plugin allows to store application configuration sensitive informations as key value pair which will be hidden from direct access </description>
+    <author>sarangan @ spam</author>
+    <keywords>android,ionic, app, config</keywords>
+
+    <engine>
+        <engine name="cordova" version=">=2.9.0" />
+    </engine>
+
+    <license>MIT</license>
+
+    <js-module src="www/AppConfig.js" name="AppConfig">
+        <clobbers target="window.AppConfig" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="AppConfig" >
+            <param name="android-package" value="sara.vtwo.AppConfig.AppConfig"/>
+          </feature>
+        </config-file>
+
+        <source-file src="src/android/AppConfig.java"
+            target-dir="src/sara/vtwo/AppConfig" />
+
+    </platform>
+</plugin>
